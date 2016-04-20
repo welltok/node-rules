@@ -335,4 +335,29 @@ describe("Rules", function() {
         });
     });
   });
+  describe("rule passing object", function() {
+    var rules = [{
+        "name": "rule1",
+        "condition": function(R, rule) {
+            this.name = rule.name;
+            R.when(true);
+        },
+        "consequence": function(R) {
+            R.next();
+        }
+    }];
+
+    var fact = {
+        "value1": 6
+    };
+
+    it("is passed through", function(done) {
+        var R = new RuleEngine(rules, { ignoreFactChanges: true });
+
+        R.execute(fact, function(result) {
+            expect(result.name).to.equal("rule1");
+            done();
+        });
+    });
+  });
 });
