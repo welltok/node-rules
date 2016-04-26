@@ -137,7 +137,7 @@ describe("Rules", function() {
             var R = new RuleEngine(rule);
             R.execute({
                 "transactionTotal": 200
-            }, function(result) {
+            }, function(err, result) {
                 expect(result.result).to.eql(false);
             });
         });
@@ -164,7 +164,7 @@ describe("Rules", function() {
             R.execute({
                 "transactionTotal": 200,
                 "card": "VISA"
-            }, function(result) {
+            }, function(err, result) {
                 expect(result.result).to.eql("Custom Result");
             });
         });
@@ -329,7 +329,7 @@ describe("Rules", function() {
     it("doesn't rerun when a fact changes if ignoreFactChanges is true", function(done) {
         var R = new RuleEngine(rules, { ignoreFactChanges: true });
 
-        R.execute(fact, function(result) {
+        R.execute(fact, function(err, result) {
             expect(result.errors).to.have.length(1);
             done();
         });
@@ -354,7 +354,7 @@ describe("Rules", function() {
     it("is passed through", function(done) {
         var R = new RuleEngine(rules, { ignoreFactChanges: true });
 
-        R.execute(fact, function(result) {
+        R.execute(fact, function(err, result) {
             expect(result.name).to.equal("rule1");
             done();
         });

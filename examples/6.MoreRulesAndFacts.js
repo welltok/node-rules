@@ -246,35 +246,35 @@ var R = new RuleEngine(rules);
 console.log("----------".blue);
 console.log("start execution of rules".blue);
 console.log("----------".blue);
-R.execute(user7, function(result) {
+R.execute(user7, function(err, result) {
     if (result.result) console.log("Completed", "User7 Accepted".green);
     else console.log("Completed", "User7 Rejected".red);
 });
-R.execute(user1, function(result) {
+R.execute(user1, function(err, result) {
     if (result.result) console.log("Completed", "User1 Accepted".green);
     else console.log("Completed", "User1 Rejected".red);
 });
-R.execute(user2, function(result) {
+R.execute(user2, function(err, result) {
     if (result.result) console.log("Completed", "User2 Accepted".green);
     else console.log("Completed", "User2 Rejected".red);
 });
-R.execute(user3, function(result) {
+R.execute(user3, function(err, result) {
     if (result.result) console.log("Completed", "User3 Accepted".green);
     else console.log("Completed", "User3 Rejected".red);
 });
-R.execute(user4, function(result) {
+R.execute(user4, function(err, result) {
     if (result.result) console.log("Completed", "User4 Accepted".green);
     else console.log("Completed", "User4 Rejected".red);
 });
-R.execute(user5, function(result) {
+R.execute(user5, function(err, result) {
     if (result.result) console.log("Completed", "User5 Accepted".green);
     else console.log("Completed", "User5 Rejected".red);
 });
-R.execute(user6, function(result) {
+R.execute(user6, function(err, result) {
     if (result.result) console.log("Completed", "User6 Accepted".green);
     else console.log("Completed", "User6 Rejected".red);
 });
-R.execute(user8, function(result) {
+R.execute(user8, function(err, result) {
     if (result.result) console.log("Completed", "User8 Accepted".green);
     else console.log("Completed", "User8 Rejected".red);
 });
